@@ -1,0 +1,51 @@
+doctype html
+html
+
+  head
+    link(href='./bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='./animate.css/animate.min.css', rel='stylesheet')
+
+    script(src='https://www.gstatic.com/charts/loader.js')
+    script(src='./jquery/dist/jquery.min.js')
+    script(src='./block-ui/jquery.blockUI.js')
+    script(src='js/uiHelper.js')
+    script(src='js/dataProvider.js')
+    script(src='js/selectCar.js')
+    script(src='js/render.js')
+
+
+    title Car Depreciation
+  body
+    div.container-fluid
+
+        h2.animated.bounceInDown.text-primary #{title}
+        div.animated.bounceInLeft.panel.panel-primary
+            div.lead.panel-heading Select car's year, make and model
+            div.panel-body
+                div.media
+                    div.media-body.media-middle
+                        div.form-horizontal
+                            div.form-group
+                                label.control-label.col-lg-2.col-md-2 Year
+                                div.col-lg-4.col-md-4
+                                    select#Years.form-control
+                            div.form-group
+                                label.control-label.col-lg-2.col-md-2  Make
+                                div.col-lg-4.col-md-6
+                                    select#Makes.form-control
+                            div.form-group
+                                label.control-label.col-lg-2.col-md-2  Model
+                                div.col-lg-4.col-md-6
+                                    select#Models.form-control
+                            div.form-group
+                                label.control-label.col-lg-2.col-md-2
+                                div.col-lg-4.col-md-4
+                                    input.btn.btn-primary#YearSelect(type="submit" value="Submit")
+
+                    div.media-right.media-middle
+                        img(src='img/car1.png' class='hidden-xs animated bounceInRight' height='50%')
+
+        div#Results.animated.bounceInUp.panel.panel-primary(style='display: none;')
+            div#CarTitle.lead.panel-heading
+            div.panel-body
+                div(id="curve_chart", style="height: 550px")

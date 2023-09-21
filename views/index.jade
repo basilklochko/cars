@@ -1,0 +1,54 @@
+doctype html
+html
+
+  head
+    link(href='./bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='./chartist/dist/chartist.min.css', rel='stylesheet')
+    link(href='./animate.css/animate.min.css', rel='stylesheet')
+
+    link(href='css/site.css', rel='stylesheet')
+
+    script(src='./jquery/dist/jquery.min.js')
+    script(src='./block-ui/jquery.blockUI.js')
+    script(src='./chartist/dist/chartist.min.js')
+    script(src='./chartist-plugin-axistitle/dist/chartist-plugin-axistitle.min.js')
+    script(src='./chartist-plugin-legend/chartist-plugin-legend.js')
+    script(src='js/uiHelper.js')
+    script(src='js/selectCar.js')
+
+    title Car Depreciation
+  body
+    div.container-fluid
+
+        h3.animated.bounceInDown.text-primary.text-right #{title}
+        div.animated.bounceInLeft.panel.panel-primary
+            div.panel-body
+                div.media
+                    div.media-body.media-middle
+                        div.form-horizontal
+                            div.form-group.form-group-sm
+                                label.control-label.col-lg-2.col-md-2 Year
+                                div.col-lg-4.col-md-4
+                                    select#Years.form-control
+                            div.form-group.form-group-sm
+                                label.control-label.col-lg-2.col-md-2  Make
+                                div.col-lg-4.col-md-6
+                                    select#Makes.form-control
+                            div.form-group.form-group-sm
+                                label.control-label.col-lg-2.col-md-2  Model
+                                div.col-lg-4.col-md-6
+                                    select#Models.form-control
+                            div.form-group.form-group-sm
+                                label.control-label.col-lg-2.col-md-2
+                                div.col-lg-8.col-md-12.col-sm-12
+                                    input.btn.btn-primary.btn-sm#YearSelect(type="submit" value="Add Car")
+                                    &nbsp;
+                                    input.btn.btn-primary.btn-sm#RemoveAll(type="submit" value="Reset")
+
+                    div.media-right.media-middle
+                        img(src='img/car1.png' class='hidden-xs animated bounceInRight' height='50%')
+
+        div#Cars
+
+        br
+        div#Results.ct-chart.ct-golden-section
