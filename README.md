@@ -9,7 +9,3 @@ Car depreciation comparisson charts
 * Jade
 * jQuery
 * Bootstrap
-
-### Deployed To ###
-
-https://carsdepreciation.herokuapp.com/
